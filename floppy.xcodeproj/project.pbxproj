@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E2B99E061BBABE680062E788 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B99E051BBABE680062E788 /* AppDelegate.swift */; };
-		E2B99E081BBABE680062E788 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B99E071BBABE680062E788 /* ViewController.swift */; };
+		E2B99E081BBABE680062E788 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B99E071BBABE680062E788 /* GameViewController.swift */; };
 		E2B99E0B1BBABE680062E788 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2B99E091BBABE680062E788 /* Main.storyboard */; };
 		E2B99E0D1BBABE680062E788 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2B99E0C1BBABE680062E788 /* Assets.xcassets */; };
 		E2B99E101BBABE680062E788 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2B99E0E1BBABE680062E788 /* LaunchScreen.storyboard */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		E2B99E021BBABE680062E788 /* floppy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = floppy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B99E051BBABE680062E788 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E2B99E071BBABE680062E788 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E2B99E071BBABE680062E788 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		E2B99E0A1BBABE680062E788 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2B99E0C1BBABE680062E788 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2B99E0F1BBABE680062E788 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				E2B99E051BBABE680062E788 /* AppDelegate.swift */,
-				E2B99E071BBABE680062E788 /* ViewController.swift */,
+				E2B99E071BBABE680062E788 /* GameViewController.swift */,
 				E2B99E091BBABE680062E788 /* Main.storyboard */,
 				E2B99E0C1BBABE680062E788 /* Assets.xcassets */,
 				E2B99E0E1BBABE680062E788 /* LaunchScreen.storyboard */,
@@ -255,7 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2B99E081BBABE680062E788 /* ViewController.swift in Sources */,
+				E2B99E081BBABE680062E788 /* GameViewController.swift in Sources */,
 				E2B99E061BBABE680062E788 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +481,7 @@
 				E2B99E2C1BBABE680062E788 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E2B99E2D1BBABE680062E788 /* Build configuration list for PBXNativeTarget "floppyTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +490,7 @@
 				E2B99E2F1BBABE680062E788 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E2B99E301BBABE680062E788 /* Build configuration list for PBXNativeTarget "floppyUITests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +499,7 @@
 				E2B99E321BBABE680062E788 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
