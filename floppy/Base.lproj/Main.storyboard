@@ -16,11 +16,33 @@
                                 <rect key="frame" x="86" y="204" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iqo-XI-giz">
+                                <rect key="frame" x="28" y="113" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go!">
+                                    <color key="titleColor" red="0.93333333330000001" green="0.85098039219999999" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ERb-N0-nrI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="DzV-Sl-LRj" appends="YES" id="PIS-ir-ihJ"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="birdView" destination="RRR-FA-NHH" id="27X-d1-eAg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="DzV-Sl-LRj">
+                    <connections>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="RB3-tq-H1n"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="162.66666666666666" y="358.31333333333333"/>
         </scene>
