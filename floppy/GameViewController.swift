@@ -43,13 +43,39 @@ class GameViewController: UIViewController {
         
         gravity.addItem(birdView)
         
+        drawPipes()
+        NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "onTimer", userInfo: nil, repeats: true)
+    }
+    
+    func onTimer() {
+        // draw new pipes
+        drawPipes()
+        
+        // remove out of bound pipes
+    }
+    
+    
+    func drawPipes() {
+        let frameHeight = Int(view.frame.height)
+        
+        let gapHeight = 100
+        
+        let minTopHeight = 50
+        let maxTopHeight = Int(frameHeight * 40 / 100)
+        let maxTopDelta = maxTopHeight - minTopHeight
+        
+        let rightBoundX = view.frame.width
+        
+        let r = arc4random_uniform(UInt32(maxTopDelta))
+        let topPipeHeight: Int = minTopHeight + Int(r)
         
         let topPipe = UIImageView(image: UIImage(named: "pipeTop"))
-        topPipe.frame = CGRect(x: 280, y: 0, width: 40, height: 200)
+        topPipe.frame = CGRect(x: Int(rightBoundX), y: 0, width: 40, height: topPipeHeight)
         
-        let bottomPipeHeight = 100
+        let bottomPipeHeight = frameHeight - topPipeHeight - gapHeight
+        
         let bottomPipe = UIImageView(image: UIImage(named: "pipeBottom"))
-        bottomPipe.frame = CGRect(x: 280, y: Int(view.frame.height) - bottomPipeHeight, width: 40, height: bottomPipeHeight)
+        bottomPipe.frame = CGRect(x: Int(rightBoundX), y: Int(view.frame.height) - bottomPipeHeight, width: 40, height: bottomPipeHeight)
         
         view.addSubview(topPipe)
         view.addSubview(bottomPipe)
@@ -61,7 +87,6 @@ class GameViewController: UIViewController {
         animator.addBehavior(pipeProperties)
     }
     
-    
     @IBAction func onTap(sender: UITapGestureRecognizer) {
         
         let birdItemBehavior = UIDynamicItemBehavior(items: [birdView])
@@ -72,7 +97,10 @@ class GameViewController: UIViewController {
         
         let push = UIPushBehavior(items: [birdView], mode: UIPushBehaviorMode.Instantaneous)
         
-        push.pushDirection = CGVectorMake(0, -3)
+        let upY = abs(initialVelocity.y)
+        
+        birdItemBehavior.addLinearVelocity(CGPoint(x: 0, y: -upY), forItem: birdView)
+        push.pushDirection = CGVectorMake(0, -1.5)
         push.active = true
         animator.addBehavior(push)
         
