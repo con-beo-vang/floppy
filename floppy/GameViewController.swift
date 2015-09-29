@@ -14,7 +14,7 @@ class GameViewController: UIViewController {
     
     var animator = UIDynamicAnimator()
     var gravity = UIGravityBehavior()
-    
+    var collision = UICollisionBehavior()
     
     
     override func viewDidLoad() {
@@ -30,7 +30,9 @@ class GameViewController: UIViewController {
         
         animator.addBehavior(gravity)
         
+        collision.addItem(birdView)
         
+        animator.addBehavior(collision)
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,7 +46,7 @@ class GameViewController: UIViewController {
         gravity.addItem(birdView)
         
         drawPipes()
-        NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "onTimer", userInfo: nil, repeats: true)
+        NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "onTimer", userInfo: nil, repeats: true)
     }
     
     func onTimer() {
@@ -58,7 +60,7 @@ class GameViewController: UIViewController {
     func drawPipes() {
         let frameHeight = Int(view.frame.height)
         
-        let gapHeight = 100
+        let gapHeight = 200
         
         let minTopHeight = 50
         let maxTopHeight = Int(frameHeight * 40 / 100)
@@ -80,9 +82,14 @@ class GameViewController: UIViewController {
         view.addSubview(topPipe)
         view.addSubview(bottomPipe)
         
+        collision.addItem(topPipe)
+        collision.addItem(bottomPipe)
+        
         let pipeProperties = UIDynamicItemBehavior(items: [topPipe, bottomPipe])
         pipeProperties.addLinearVelocity(CGPoint(x: -50, y: 0), forItem: topPipe)
         pipeProperties.addLinearVelocity(CGPoint(x: -50, y: 0), forItem: bottomPipe)
+        pipeProperties.resistance = 0
+        pipeProperties.density = 1000
         
         animator.addBehavior(pipeProperties)
     }
